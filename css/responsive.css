@@ -1,0 +1,118 @@
+/* ============================================================
+   TABLET (max-width: 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  body { font-size: 16px; }
+
+  .nav-inner {
+    flex-direction: column;
+    gap: 0;
+    display: none;
+  }
+  .nav-inner.open {
+    display: flex;
+    padding-bottom: 6px;
+  }
+  .nav-toggle { display: block; }
+  .nav-btn { padding: 10px 20px; font-size: 13px; }
+
+  /* Field Notes nav — always visible (no toggle) */
+  .fieldnotes-nav .nav-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4px;
+  }
+  .nav-link { padding: 14px 16px; font-size: 12px; }
+
+  .page { padding: 24px 16px 40px; }
+  .ornate-frame { padding: 24px 18px; }
+  .ornate-frame-wide { padding: 28px 20px; }
+
+  .home-hero h1 { font-size: 28px; }
+  .home-hero .subtitle { font-size: 14px; }
+  .home-hero .hero-cap {
+    width: 90px; height: 90px; font-size: 72px;
+  }
+  .hero-vines::before, .hero-vines::after { display: none; }
+
+  .drop-cap-framed {
+    width: 70px; height: 70px; font-size: 58px;
+    margin-right: 12px;
+  }
+
+  .skills-columns { flex-direction: column; }
+  .skills-divider {
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--gold-dark) 0px,
+      var(--gold-dark) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+    margin: 16px 0;
+  }
+  .skills-divider::before {
+    top: 50%;
+    left: 50%;
+    padding: 0 8px;
+  }
+  .skills-col { padding: 0; }
+
+  .timeline { padding-left: 30px; }
+  .timeline-entry::after { left: -24px; }
+  .timeline::after { left: -4px; }
+
+  .nav-cards { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .contact-links { grid-template-columns: 1fr; }
+
+  /* Hide decorative elements on mobile */
+  .spot-ms, .margin-illo { display: none; }
+  .page-corners::before, .page-corners::after { display: none; }
+
+  #particles-canvas { display: none !important; }
+
+  /* Disable card flip on mobile — show both sides stacked */
+  .project-card { perspective: none; }
+  .project-card-inner { transform-style: flat; }
+  .project-card.flipped .project-card-inner { transform: none; }
+  .project-card-back {
+    position: relative;
+    transform: none;
+    margin-top: 12px;
+    min-height: auto;
+    padding: 20px;
+  }
+  .flip-hint-front { display: none; }
+
+  /* Field Notes — blog pages */
+  .post-page { padding: 24px 16px 40px; }
+  .post-body { font-size: 16px; line-height: 1.8; }
+  .post-title { font-size: 24px; }
+  .post-nav { flex-direction: column; gap: 12px; }
+  .post-nav-next { text-align: left; margin-left: 0; }
+  .fieldnotes-entry { padding: 20px 18px; }
+}
+
+/* ============================================================
+   PHONE (max-width: 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .nav-cards { grid-template-columns: 1fr; }
+  .home-hero h1 { font-size: 24px; }
+  .ornate-frame { padding: 18px 14px; }
+  .timeline-entry { padding: 18px; }
+  .entry-title { font-size: 17px; }
+  .small-illuminated { width: 36px; height: 36px; font-size: 28px; }
+  .interest-badge { font-size: 12px; padding: 6px 14px; }
+
+  /* Field Notes */
+  .post-title { font-size: 20px; }
+  .post-body { font-size: 15px; }
+  .fieldnotes-entry { padding: 16px 14px; }
+  .fieldnotes-link { font-size: 17px; }
+  .nav-link { padding: 12px 12px; font-size: 11px; }
+}
