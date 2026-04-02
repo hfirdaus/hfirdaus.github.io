@@ -29,17 +29,17 @@
   <div class="page-inner">
 
     <article class="post-container animate-in">
+      <div class="entry-date-label">{{ page.date | date: "%B %-d, %Y" }}</div>
       <header class="post-header">
-        <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
         <h1 class="post-title illuminated-heading">
           <span class="drop-cap-framed glow-cap">{{ page.title | slice: 0 }}</span>
           <span style="padding-top:14px;display:inline-block;">{{ page.title | slice: 1, 100 }}</span>
         </h1>
         <div style="clear:both;margin-bottom:20px;"></div>
         {% if page.tags %}
-        <div class="post-tags">
+        <div class="interests-wrap" style="justify-content:flex-start;gap:8px;">
           {% for tag in page.tags %}
-          <span class="project-tag">{{ tag }}</span>
+          <span class="interest-badge">{{ tag }}</span>
           {% endfor %}
         </div>
         {% endif %}
