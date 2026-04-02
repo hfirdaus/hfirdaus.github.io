@@ -37,9 +37,10 @@
     <div class="fieldnotes-listing">
       {% for post in site.posts %}
       <div class="entry-date-label">{{ post.date | date: "%B %-d, %Y" }}</div>
+      <a href="{{ post.url }}" class="fieldnotes-entry-link" style="text-decoration:none;color:inherit;display:block;">
       <div class="fieldnotes-entry animate-in delay-1">
         <h2 class="entry-title">
-          <a href="{{ post.url }}" class="fieldnotes-link">{{ post.title }}</a>
+          <span class="fieldnotes-link">{{ post.title }}</span>
         </h2>
         {% if post.excerpt %}
         <p class="entry-excerpt">{{ post.excerpt }}</p>
@@ -52,6 +53,7 @@
         </div>
         {% endif %}
       </div>
+      </a>
 
       {% unless forloop.last %}
       {% endunless %}
