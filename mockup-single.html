@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hadiya Firdaus — Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+<style>
+/* ============================================================
+   SINGLE-PAGE OVERRIDES
+   ============================================================ */
+
+/* All sections visible, flowing */
+.sp .section {
+  display: block;
+  min-height: auto;
+  padding: 70px 20px 50px 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero — full viewport, centered */
+.sp .section-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 60px 220px;
+}
+
+/* Left sidebar nav */
+.sp nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background: rgba(10,20,32,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(201,168,76,0.2);
+  border-bottom: none;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.sp .nav-inner {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0 0 0 24px;
+  width: 100%;
+}
+
+.sp .nav-btn {
+  padding: 12px 20px 12px 0;
+  font-size: 12px;
+  text-align: left;
+  width: 100%;
+  text-decoration: none;
+}
+
+.sp .nav-btn::after {
+  bottom: 6px;
+  left: 0;
+}
+.sp .nav-btn.active::after {
+  left: 0;
+  width: 0;
+}
+.sp .nav-btn:hover::after {
+  left: 0;
+  width: 30%;
+}
+
+/* Section rule needs left offset */
+.sp .section-rule {
+  margin-left: 210px;
+}
+
+@media (max-width: 768px) {
+  .sp nav {
+    position: sticky;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(201,168,76,0.25);
+  }
+  .sp .nav-inner {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  .sp .nav-btn {
+    padding: 14px 16px;
+    font-size: 12px;
+    width: auto;
+  }
+  .sp .section {
+    padding-left: 20px;
+  }
+  .sp .section-hero {
+    padding-left: 20px;
+  }
+  .sp .section-rule {
+    margin-left: auto;
+  }
+}
+
+/* Seamless background — no jarring color switches */
+.sp .section {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(30,58,92,0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgba(22,42,66,0.4) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(201,168,76,0.03) 0%, transparent 40%),
+    linear-gradient(180deg, var(--page-bg) 0%, var(--page-bg-mid) 50%, var(--page-bg) 100%);
+}
+
+/* Alternate sections get subtle warmth shift */
+.sp .section:nth-child(even) {
+  background:
+    radial-gradient(ellipse at 60% 40%, rgba(30,58,92,0.35) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 70%, rgba(201,168,76,0.04) 0%, transparent 40%),
+    linear-gradient(180deg, #12233a 0%, var(--page-bg-mid) 50%, #101e32 100%);
+}
+
+/* Section divider — subtle gold line with ornament */
+.section-rule {
+  max-width: 400px;
+  margin: 0 auto;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+  opacity: 0.4;
+  position: relative;
+}
+.section-rule::after {
+  content: '\2766';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: var(--gold-dark);
+  background: var(--page-bg-mid);
+  padding: 0 12px;
+  opacity: 0.7;
+}
+
+.section .page-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Scroll-triggered animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+/* Hero scroll cue */
+.scroll-cue {
+  position: absolute;
+  bottom: 36px;
+  left: 200px;
+  right: 0;
+  text-align: center;
+  animation: bobDown 2.5s ease-in-out infinite;
+}
+.scroll-cue span {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  color: var(--gold-dark);
+  opacity: 0.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.scroll-cue::after {
+  content: '\2193';
+  font-size: 18px;
+  color: var(--gold-dark);
+  opacity: 0.4;
+}
+@keyframes bobDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Skills as inline badges — interest-badge style */
+.skills-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* Smaller badges when used inline in timeline entries */
+.sp .entry-desc .interest-badge {
+  font-size: 11px;
+  padding: 4px 14px;
+}
+
+/* Contact — compact inline row */
+.contact-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.contact-item {
+  text-align: center;
+  text-decoration: none;
+  color: var(--gold-mid);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  opacity: 0.8;
+}
+.contact-item:hover {
+  color: var(--gold-light);
+  opacity: 1;
+}
+.contact-item .contact-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+</style>
+</head>
+<body class="sp">
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav>
+  <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-btn active">Home</a>
+    <a href="#about" class="nav-btn">About</a>
+    <a href="#experience" class="nav-btn">Experience</a>
+    <a href="#projects" class="nav-btn">Projects</a>
+    <a href="#contact" class="nav-btn">Contact</a>
+    <a href="/fieldnotes/" class="nav-btn nav-btn-link">Field Notes</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="section section-hero" id="hero">
+  <div class="spot-ms vine shimmer-spot" style="top:120px;right:30px;"></div>
+  <div class="spot-ms floral shimmer-spot" style="top:300px;left:20px;animation-delay:1.5s;"></div>
+  <div class="spot-ms leaf shimmer-spot" style="bottom:140px;right:40px;animation-delay:2.5s;"></div>
+  <div class="spot-ms star shimmer-spot" style="top:200px;left:40px;animation-delay:0.8s;"></div>
+
+  <div class="page-inner">
+    <div class="home-hero animate-in">
+      <div class="hero-vines">
+        <div class="hero-cap glow-cap">H</div>
+      </div>
+      <h1>Hadiya Firdaus</h1>
+      <div class="subtitle">Software Engineer</div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="section" id="about">
+  <div class="spot-ms floral shimmer-spot" style="top:80px;right:22px;"></div>
+  <div class="spot-ms star shimmer-spot" style="bottom:60px;left:30px;animation-delay:0.7s;"></div>
+
+  <div class="page-inner">
+    <h2 class="illuminated-heading reveal">
+      <span class="drop-cap-framed glow-cap">A</span>
+      <span style="padding-top:14px;display:inline-block;">bout</span>
+    </h2>
+    <div style="clear:both;margin-bottom:30px;"></div>
+
+    <div class="ornate-frame ornate-frame-wide reveal" style="position:relative;">
+      <span class="corner corner-tl"></span>
+      <span class="corner corner-tr"></span>
+      <span class="corner corner-bl"></span>
+      <span class="corner corner-br"></span>
+
+      <p class="about-bio" style="text-align:center;">
+        I'm a software developer, a problem-solver, and a lifelong learner. I'm interested in the future of AI and mixed reality and how we pivot it to goodness, the changing ways we interface with technology, and how we use science to empower and give back to our communities.
+      </p>
+      <p class="about-bio" style="text-align:center;">
+        In no particular order, I like origami, fiction, gardening, theatre, comedy, and poststructuralism. I'm currently based out of Seattle, Washington.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section class="section" id="experience">
+  <div class="spot-ms vine shimmer-spot" style="top:150px;right:25px;"></div>
+  <div class="spot-ms star shimmer-spot" style="top:500px;right:35px;animation-delay:2s;"></div>
+  <div class="spot-ms floral shimmer-spot" style="bottom:200px;left:18px;animation-delay:1s;"></div>
+
+  <div class="page-inner">
+    <h2 class="illuminated-heading reveal">
+      <span class="drop-cap-framed glow-cap">E</span>
+      <span style="padding-top:14px;display:inline-block;">xperience</span>
+    </h2>
+    <div style="clear:both;margin-bottom:30px;"></div>
+
+    <div class="timeline">
+      <svg class="timeline-vine-svg" viewBox="0 0 30 800" preserveAspectRatio="none" fill="none">
+        <path class="vine-path" d="M15,0 Q20,50 12,100 Q5,150 18,200 Q25,250 10,300 Q5,350 20,400 Q25,450 12,500 Q5,550 18,600 Q25,650 10,700 Q8,750 15,800" stroke="#2a5a3a" stroke-width="1.5" opacity="0.25" fill="none"/>
+        <path class="vine-leaf" d="M12,80 Q8,72 14,68 Q18,75 12,80Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M20,200 Q24,192 18,188 Q14,195 20,200Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M10,340 Q6,332 12,328 Q16,335 10,340Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M18,480 Q22,472 16,468 Q12,475 18,480Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M12,620 Q8,612 14,608 Q18,615 12,620Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M20,740 Q24,732 18,728 Q14,735 20,740Z" fill="#2a5a3a" opacity="0.15"/>
+      </svg>
+
+      <div class="timeline-entry reveal">
+        <div class="entry-date">Jul 2022 &mdash; Present</div>
+        <div class="entry-title">
+          <span class="small-illuminated">S</span>
+          <span style="padding-top:6px;">Software Engineer</span>
+        </div>
+        <div class="entry-company"><a href="https://www.microsoft.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Microsoft</a></div>
+        <div class="entry-desc">
+          <ul>
+            <li>Working on scaling and maintaining a robust platform for automated revenue recognition that processes billions of dollars of complex transactions processed by Microsoft for clients, vendors, and customers</li>
+          </ul>
+          <div class="interests-wrap" style="margin-top:8px;justify-content:flex-start;">
+            <span class="interest-badge">C#</span>
+            <span class="interest-badge">.NET</span>
+            <span class="interest-badge">Azure</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry reveal">
+        <div class="entry-date">Oct 2019 &mdash; Mar 2022</div>
+        <div class="entry-title">
+          <span class="small-illuminated">S</span>
+          <span style="padding-top:6px;">Software Developer</span>
+        </div>
+        <div class="entry-company"><a href="https://www.benevity.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Benevity</a></div>
+        <div class="entry-desc">
+          <ul>
+            <li>Working on developing a new flexible guided content creation experience for charities to create engaging content for users</li>
+          </ul>
+          <div class="interests-wrap" style="margin-top:8px;justify-content:flex-start;">
+            <span class="interest-badge">Java</span>
+            <span class="interest-badge">Spring Boot</span>
+            <span class="interest-badge">JavaScript</span>
+            <span class="interest-badge">Vue.js</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry reveal">
+        <div class="entry-date">May 2018 &mdash; Aug 2018</div>
+        <div class="entry-title">
+          <span class="small-illuminated">S</span>
+          <span style="padding-top:6px;">Software Engineer Intern</span>
+        </div>
+        <div class="entry-company"><a href="https://www.infoblox.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Infoblox</a></div>
+        <div class="entry-desc">
+          <ul>
+            <li>Worked on upgrading the testing suite for Infoblox's SaaS DNS microservice to prepare for migration to a new framework</li>
+            <li>Developed in Go in an agile environment, collaborated with a global team</li>
+          </ul>
+          <div class="interests-wrap" style="margin-top:8px;justify-content:flex-start;">
+            <span class="interest-badge">Go</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry reveal">
+        <div class="entry-date">Jan 2018 &mdash; Apr 2018</div>
+        <div class="entry-title">
+          <span class="small-illuminated">A</span>
+          <span style="padding-top:6px;">AR/VR Developer</span>
+        </div>
+        <div class="entry-company"><a href="http://ase.cpsc.ucalgary.ca/index.php" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Agile Surface Engineering Lab</a></div>
+        <div class="entry-desc">
+          <ul>
+            <li>Developed an augmented reality interface for physiotherapists on the HoloLens to navigate through visualizations of their patients' skeletal history and provided aids &mdash; colour, size, position of skeletons &mdash; to allow for accurate evidence-based analysis of patients' rehabilitation recovery trajectory</li>
+          </ul>
+          <div class="interests-wrap" style="margin-top:8px;justify-content:flex-start;">
+            <span class="interest-badge">C#</span>
+            <span class="interest-badge">Unity</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry reveal">
+        <div class="entry-date">May 2016 &mdash; Sep 2017</div>
+        <div class="entry-title">
+          <span class="small-illuminated">F</span>
+          <span style="padding-top:6px;">Full Stack Software Developer</span>
+        </div>
+        <div class="entry-company"><a href="https://solium.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Solium Capital</a></div>
+        <div class="entry-desc">
+          <div class="interests-wrap" style="margin-top:8px;justify-content:flex-start;">
+            <span class="interest-badge">Java</span>
+            <span class="interest-badge">GWT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry reveal">
+        <div class="entry-date">Jul 2015 &mdash; Apr 2016</div>
+        <div class="entry-title">
+          <span class="small-illuminated">B</span>
+          <span style="padding-top:6px;">Business Intelligence Student Assistant</span>
+        </div>
+        <div class="entry-company"><a href="https://ucalgary.ca/bia" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Business Intelligence &amp; Analytics, UofC</a></div>
+        <div class="entry-desc">
+          <div class="interests-wrap" style="margin-top:8px;justify-content:flex-start;">
+            <span class="interest-badge">Drupal</span>
+            <span class="interest-badge">PHP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education — naturally follows experience in the same section -->
+    <div class="ornament-divider pulse-divider" style="margin-top:50px;"></div>
+
+    <h2 class="illuminated-heading reveal">
+      <span class="drop-cap-framed glow-cap">E</span>
+      <span style="padding-top:14px;display:inline-block;">ducation</span>
+    </h2>
+    <div style="clear:both;margin-bottom:20px;"></div>
+
+    <div class="timeline reveal">
+      <svg class="timeline-vine-svg" viewBox="0 0 30 800" preserveAspectRatio="none" fill="none">
+        <path class="vine-path" d="M15,0 Q20,50 12,100 Q5,150 18,200 Q25,250 10,300 Q5,350 20,400 Q25,450 12,500 Q5,550 18,600 Q25,650 10,700 Q8,750 15,800" stroke="#2a5a3a" stroke-width="1.5" opacity="0.25" fill="none"/>
+        <path class="vine-leaf" d="M12,80 Q8,72 14,68 Q18,75 12,80Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M20,200 Q24,192 18,188 Q14,195 20,200Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M10,340 Q6,332 12,328 Q16,335 10,340Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M18,480 Q22,472 16,468 Q12,475 18,480Z" fill="#2a5a3a" opacity="0.15"/>
+      </svg>
+
+      <div class="timeline-entry">
+        <div class="entry-date">Sep 2013 &mdash; Apr 2019</div>
+        <div class="entry-title">
+          <span class="small-illuminated">U</span>
+          <span style="padding-top:6px;">University of Calgary</span>
+        </div>
+        <div class="entry-desc">
+          <ul>
+            <li>B.Sc. Computer Science (with Internship)</li>
+            <li>B.A. English</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry">
+        <div class="entry-date">Sep 2018 &mdash; Dec 2018</div>
+        <div class="entry-title">
+          <span class="small-illuminated">Y</span>
+          <span style="padding-top:6px;">Yonsei University</span>
+        </div>
+        <div class="entry-desc">
+          <ul>
+            <li>Study Abroad &mdash; Seoul, South Korea</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry">
+        <div class="entry-date">Jul 2019</div>
+        <div class="entry-title">
+          <span class="small-illuminated">U</span>
+          <span style="padding-top:6px;">Universit&eacute; de Montr&eacute;al</span>
+        </div>
+        <div class="entry-desc">
+          <ul>
+            <li>EXPLORE French Immersion Exchange</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry">
+        <div class="entry-date">May 2021 &mdash; Jun 2021</div>
+        <div class="entry-title">
+          <span class="small-illuminated">A</span>
+          <span style="padding-top:6px;">AMII &amp; MILA</span>
+        </div>
+        <div class="entry-desc">
+          <ul>
+            <li>AI4GoodLab &mdash; Training program for women in AI and machine learning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ===================== PROJECTS ===================== -->
+<section class="section" id="projects">
+  <div class="spot-ms leaf shimmer-spot" style="top:80px;right:28px;"></div>
+  <div class="spot-ms vine shimmer-spot" style="top:350px;left:16px;animation-delay:1.8s;"></div>
+
+  <div class="page-inner">
+    <h2 class="illuminated-heading reveal">
+      <span class="drop-cap-framed glow-cap">P</span>
+      <span style="padding-top:14px;display:inline-block;">rojects</span>
+    </h2>
+    <div style="clear:both;margin-bottom:30px;"></div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <span class="project-card-emoji">&#129529;</span>
+            <h3>Physifeedback</h3>
+            <p class="project-desc">A proof of concept tool for physiotherapy patients that uses their camera to recognize exercises and provides feedback on range of motion, rep time, and rep count. Powered by the MediaPipe Pose Tracking API.</p>
+            <div class="interests-wrap" style="justify-content:flex-start;gap:8px;">
+              <span class="interest-badge">MediaPipe</span>
+              <span class="interest-badge">JavaScript</span>
+              <span class="interest-badge">ML</span>
+            </div>
+            <div class="flip-hint-front">click to reveal more &#10022;</div>
+          </div>
+          <div class="project-card-back">
+            <h4>&#10022; Physifeedback</h4>
+            <p>Supports patients doing exercises at home so they focus on form instead of keeping track. Image recognition AI trained on 100s of physiotherapy pose images.</p>
+            <p style="margin-top:12px;">
+              <a href="https://github.com/hfirdaus/physifeedback" target="_blank" rel="noopener" style="color:var(--gold-mid);font-size:13px;">GitHub</a>
+            </p>
+            <div class="flip-hint">click to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-d1">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <span class="project-card-emoji">&#9728;&#65039;</span>
+            <h3>Solar Search</h3>
+            <p class="project-desc">An augmented reality space scavenger hunt designed to encourage collaborative exploration and learning by visitors child and adult alike in the Telus Spark Science Centre.</p>
+            <div class="interests-wrap" style="justify-content:flex-start;gap:8px;">
+              <span class="interest-badge">AR</span>
+              <span class="interest-badge">Unity</span>
+              <span class="interest-badge">C#</span>
+            </div>
+            <div class="flip-hint-front">click to reveal more &#10022;</div>
+          </div>
+          <div class="project-card-back">
+            <h4>&#10022; Solar Search</h4>
+            <p>An exciting AR scavenger hunt at Telus Spark Science Centre that encourages collaborative exploration and learning about the solar system.</p>
+            <p style="margin-top:12px;">
+              <a href="https://github.com/hfirdaus/projectspark" target="_blank" rel="noopener" style="color:var(--gold-mid);font-size:13px;">GitHub</a>
+            </p>
+            <div class="flip-hint">click to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-d2">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <span class="project-card-emoji">&#129302;</span>
+            <h3>BettyBot</h3>
+            <p class="project-desc">An assistive elderly companion robot meant to help elderly people living alone remain independent. Detects falls, contacts emergency contacts, plays memory games, and delivers pills on schedule.</p>
+            <div class="interests-wrap" style="justify-content:flex-start;gap:8px;">
+              <span class="interest-badge">Robotics</span>
+              <span class="interest-badge">Google Home</span>
+              <span class="interest-badge">Pioneer 3DX</span>
+            </div>
+            <div class="flip-hint-front">click to reveal more &#10022;</div>
+          </div>
+          <div class="project-card-back">
+            <h4>&#10022; BettyBot</h4>
+            <p>Powered by a Pioneer 3DX, Google Home, an accelerometer, and some code. Interacts using voice and keeps its elderly companion healthy and safe.</p>
+            <p style="margin-top:12px;">
+              <a href="https://youtu.be/kKcYmujrF5Q" target="_blank" rel="noopener" style="color:var(--gold-mid);font-size:13px;">Video Demo</a>
+            </p>
+            <div class="flip-hint">click to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-d3">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <span class="project-card-emoji">&#127912;</span>
+            <h3>Pollocks</h3>
+            <p class="project-desc">An attempt to represent Jackson Pollock's essence, personality, and experimentalism in a singular interaction.</p>
+            <div class="interests-wrap" style="justify-content:flex-start;gap:8px;">
+              <span class="interest-badge">Processing</span>
+              <span class="interest-badge">Art</span>
+              <span class="interest-badge">HCI</span>
+            </div>
+            <div class="flip-hint-front">click to reveal more &#10022;</div>
+          </div>
+          <div class="project-card-back">
+            <h4>&#10022; Pollocks</h4>
+            <p>An interactive art piece capturing the spirit of Jackson Pollock's action painting through digital interaction.</p>
+            <p style="margin-top:12px;">
+              <a href="https://github.com/hfirdaus/pollocks" target="_blank" rel="noopener" style="color:var(--gold-mid);font-size:13px;">GitHub</a>
+              &nbsp;
+              <a href="https://youtu.be/TeNsiDFyrBE" target="_blank" rel="noopener" style="color:var(--gold-mid);font-size:13px;">Video</a>
+            </p>
+            <div class="flip-hint">click to flip back</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ===================== CONTACT ===================== -->
+<section class="section" id="contact">
+  <div class="page-inner">
+    <p class="reveal" style="text-align:center;font-size:17px;color:var(--parchment-dark);margin-bottom:36px;line-height:1.8;max-width:600px;margin-left:auto;margin-right:auto;">
+      I am always glad to connect with fellow engineers, writers, and curious people.
+    </p>
+
+    <div class="contact-links reveal" style="max-width:800px;margin:0 auto;">
+      <a href="https://github.com/hfirdaus" class="contact-card" target="_blank" rel="noopener">
+        <div class="contact-initial">G</div>
+        <h3>GitHub</h3>
+        <p>github.com/hfirdaus</p>
+      </a>
+
+      <a href="https://linkedin.com/in/hfirdaus" class="contact-card" target="_blank" rel="noopener">
+        <div class="contact-initial">L</div>
+        <h3>LinkedIn</h3>
+        <p>linkedin.com/in/hfirdaus</p>
+      </a>
+
+      <a href="mailto:contact@hadiya.ca" class="contact-card">
+        <div class="contact-initial">E</div>
+        <h3>Email</h3>
+        <p>contact@hadiya.ca</p>
+      </a>
+    </div>
+
+    <div class="contact-footer-vine" style="margin-top:50px;">
+      &#10087; &#11801; &#10086; &#10022; &#10087; &#11801; &#10086; &#10022; &#10087; &#11801; &#10086; &#10022; &#10087; &#11801; &#10086;
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <span>Hadiya Firdaus &mdash; 2026</span>
+</footer>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script src="js/particles.js"></script>
+<script src="js/interactions.js"></script>
+<script src="js/vine-animation.js"></script>
+<script>
+(function() {
+  const navBtns = document.querySelectorAll('nav .nav-btn[href^="#"]');
+  const sections = document.querySelectorAll('.section[id]');
+  const navToggle = document.querySelector('.nav-toggle');
+  const navInner = document.querySelector('.nav-inner');
+
+  // Smooth scroll on nav click
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const navH = document.querySelector('nav').offsetHeight;
+        const top = target.getBoundingClientRect().top + window.scrollY - navH;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+      if (navInner.classList.contains('open')) {
+        navInner.classList.remove('open');
+      }
+    });
+  });
+
+  // Mobile toggle
+  if (navToggle) {
+    navToggle.addEventListener('click', function() {
+      navInner.classList.toggle('open');
+    });
+  }
+
+  // Scrollspy
+  function onScroll() {
+    const scrollY = window.scrollY;
+    const navH = document.querySelector('nav').offsetHeight;
+    let current = '';
+    sections.forEach(section => {
+      if (scrollY >= section.offsetTop - navH - 80) {
+        current = section.getAttribute('id');
+      }
+    });
+    navBtns.forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.getAttribute('href') === '#' + current) {
+        btn.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Scroll-reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  function checkReveal() {
+    const trigger = window.innerHeight * 0.88;
+    revealEls.forEach(el => {
+      if (el.getBoundingClientRect().top < trigger) {
+        el.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', checkReveal, { passive: true });
+  checkReveal();
+})();
+</script>
+
+</body>
+</html>
