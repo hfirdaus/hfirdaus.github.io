@@ -12,6 +12,5 @@ exclude:
   - package-lock.json
   - scss
   - mockup-v2
-  - mockup*.html
   - CLAUDE.md
   - README.md
