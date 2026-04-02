@@ -130,27 +130,14 @@
     linear-gradient(180deg, #12233a 0%, var(--page-bg-mid) 50%, #101e32 100%);
 }
 
-/* Section divider — subtle gold line with ornament */
+/* Section divider — subtle gold fade line */
 .section-rule {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   border: none;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
-  opacity: 0.4;
-  position: relative;
-}
-.section-rule::after {
-  content: '\2766';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 14px;
-  color: var(--gold-dark);
-  background: var(--page-bg-mid);
-  padding: 0 12px;
-  opacity: 0.7;
+  opacity: 0.3;
 }
 
 .section .page-inner {
@@ -217,6 +204,23 @@
 .sp .entry-desc .interest-badge {
   font-size: 11px;
   padding: 4px 14px;
+}
+
+/* Date label above card */
+.sp .entry-date-label {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  color: var(--parchment-dark);
+  opacity: 0.6;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+/* More spacing between timeline entries */
+.sp .timeline-entry {
+  margin-bottom: 16px;
 }
 
 /* Contact — compact inline row */
@@ -343,8 +347,8 @@
         <path class="vine-leaf" d="M20,740 Q24,732 18,728 Q14,735 20,740Z" fill="#2a5a3a" opacity="0.15"/>
       </svg>
 
+      <div class="entry-date-label reveal">Jul 2022 &mdash; Present</div>
       <div class="timeline-entry reveal">
-        <div class="entry-date">Jul 2022 &mdash; Present</div>
         <div class="entry-title">
           <span class="small-illuminated">S</span>
           <span style="padding-top:6px;">Software Engineer</span>
@@ -362,10 +366,9 @@
         </div>
       </div>
 
-      <div class="ornament-divider-sm"></div>
-
+      
+      <div class="entry-date-label reveal">Oct 2019 &mdash; Mar 2022</div>
       <div class="timeline-entry reveal">
-        <div class="entry-date">Oct 2019 &mdash; Mar 2022</div>
         <div class="entry-title">
           <span class="small-illuminated">S</span>
           <span style="padding-top:6px;">Software Developer</span>
@@ -384,10 +387,9 @@
         </div>
       </div>
 
-      <div class="ornament-divider-sm"></div>
-
+      
+      <div class="entry-date-label reveal">May 2018 &mdash; Aug 2018</div>
       <div class="timeline-entry reveal">
-        <div class="entry-date">May 2018 &mdash; Aug 2018</div>
         <div class="entry-title">
           <span class="small-illuminated">S</span>
           <span style="padding-top:6px;">Software Engineer Intern</span>
@@ -404,10 +406,9 @@
         </div>
       </div>
 
-      <div class="ornament-divider-sm"></div>
-
+      
+      <div class="entry-date-label reveal">Jan 2018 &mdash; Apr 2018</div>
       <div class="timeline-entry reveal">
-        <div class="entry-date">Jan 2018 &mdash; Apr 2018</div>
         <div class="entry-title">
           <span class="small-illuminated">A</span>
           <span style="padding-top:6px;">AR/VR Developer</span>
@@ -424,10 +425,9 @@
         </div>
       </div>
 
-      <div class="ornament-divider-sm"></div>
-
+      
+      <div class="entry-date-label reveal">May 2016 &mdash; Sep 2017</div>
       <div class="timeline-entry reveal">
-        <div class="entry-date">May 2016 &mdash; Sep 2017</div>
         <div class="entry-title">
           <span class="small-illuminated">F</span>
           <span style="padding-top:6px;">Full Stack Software Developer</span>
@@ -441,10 +441,9 @@
         </div>
       </div>
 
-      <div class="ornament-divider-sm"></div>
-
+      
+      <div class="entry-date-label reveal">Jul 2015 &mdash; Apr 2016</div>
       <div class="timeline-entry reveal">
-        <div class="entry-date">Jul 2015 &mdash; Apr 2016</div>
         <div class="entry-title">
           <span class="small-illuminated">B</span>
           <span style="padding-top:6px;">Business Intelligence Student Assistant</span>
@@ -460,7 +459,7 @@
     </div>
 
     <!-- Education — naturally follows experience in the same section -->
-    <div class="ornament-divider pulse-divider" style="margin-top:50px;"></div>
+    <hr class="section-rule" style="margin-top:50px;margin-bottom:30px;">
 
     <h2 class="illuminated-heading reveal">
       <span class="drop-cap-framed glow-cap">E</span>
@@ -477,8 +476,8 @@
         <path class="vine-leaf" d="M18,480 Q22,472 16,468 Q12,475 18,480Z" fill="#2a5a3a" opacity="0.15"/>
       </svg>
 
+      <div class="entry-date-label">Sep 2013 &mdash; Apr 2019</div>
       <div class="timeline-entry">
-        <div class="entry-date">Sep 2013 &mdash; Apr 2019</div>
         <div class="entry-title">
           <span class="small-illuminated">U</span>
           <span style="padding-top:6px;">University of Calgary</span>
@@ -491,10 +490,9 @@
         </div>
       </div>
 
-      <div class="ornament-divider-sm"></div>
 
+      <div class="entry-date-label">Sep 2018 &mdash; Dec 2018</div>
       <div class="timeline-entry">
-        <div class="entry-date">Sep 2018 &mdash; Dec 2018</div>
         <div class="entry-title">
           <span class="small-illuminated">Y</span>
           <span style="padding-top:6px;">Yonsei University</span>
@@ -506,10 +504,9 @@
         </div>
       </div>
 
-      <div class="ornament-divider-sm"></div>
 
+      <div class="entry-date-label">Jul 2019</div>
       <div class="timeline-entry">
-        <div class="entry-date">Jul 2019</div>
         <div class="entry-title">
           <span class="small-illuminated">U</span>
           <span style="padding-top:6px;">Universit&eacute; de Montr&eacute;al</span>
@@ -521,10 +518,9 @@
         </div>
       </div>
 
-      <div class="ornament-divider-sm"></div>
 
+      <div class="entry-date-label">May 2021 &mdash; Jun 2021</div>
       <div class="timeline-entry">
-        <div class="entry-date">May 2021 &mdash; Jun 2021</div>
         <div class="entry-title">
           <span class="small-illuminated">A</span>
           <span style="padding-top:6px;">AMII &amp; MILA</span>
