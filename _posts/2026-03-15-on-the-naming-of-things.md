@@ -1,23 +1,21 @@
 ---
 layout: post
-title: "On the Naming of Things"
-date: 2026-03-15
-tags: [code, writing]
-excerpt: "Variable names, character names, and the quiet art of choosing the right word."
+title: "the most important thing I ever learned about imposter syndrome"
+date: 2025-08-12
+tags: [tech, imposter syndrome]
+excerpt: "you don't have it!"
 ---
 
-There is a particular kind of satisfaction in naming something well. Whether it is a function in a codebase or a character in a story, a good name does more than identify &mdash; it reveals.
+The most important thing I ever learned about imposter syndrome is that you don’t have it. It’s not a quality of you.
 
-In programming we talk about "self-documenting code," by which we usually mean code whose intent is clear from the names alone. A function called `calculateMonthlyRevenue` tells you what it does before you read a single line of its body. A variable named `x` tells you nothing.
+It’s a way of thinking and self-belief that is imposed onto you, over time, when you work in an environment where you don’t feel supported or safe enough to be vulnerable. Here, you will begin to feel less than, not good enough, and it will be very difficult to succeed. 
 
-## The literary parallel
+An environment that brings out your authentic self will only grow your confidence — that you are capable, excellent even, and that given any challenge you will stretch to face it. 
 
-Writers face the same problem. A character named "Hope" carries her meaning on her sleeve. A character named "Mrs. Ramsay" does not &mdash; but over the course of a novel, the name becomes inseparable from the person. We load it with meaning through context, through repetition, through the slow accumulation of scenes.
+So this can be fixed — and what needs fixing is not you. Because you were always capable. 
 
-Code names work differently. They need to be understood on first encounter, in isolation, by a stranger reading the code six months later at two in the morning. There is no room for accumulated meaning. Clarity is the whole game.
+Changing your environment is hard, but doable — whether it’s your workplace, your team, or getting the right support in your personal life. But the first step is the reframe, so let me remind you:
 
-## The tension
+You’re smart, capable, and intelligent. There is nothing wrong with who you are. 
 
-And yet, there is something lost when we reduce naming to pure utility. The best function names I have encountered have a kind of poetry to them &mdash; not because they are flowery, but because they compress an idea into its essential form. `debounce`. `memoize`. `hydrate`. These are words borrowed from other domains, carrying their metaphors with them.
-
-Perhaps naming, in both code and literature, is the art of compression: finding the smallest container that holds the largest meaning.
+You don’t have imposter syndrome. You don’t need fixing, your environment does.
