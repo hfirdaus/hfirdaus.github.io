@@ -98,7 +98,8 @@
 }
 
 /* Floating badges */
-.float-badge {
+.float-badge,
+.interest-badge {
   animation: floatBadge 3s ease-in-out infinite;
 }
 

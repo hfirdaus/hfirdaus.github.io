@@ -389,6 +389,24 @@ nav {
   text-transform: uppercase;
 }
 
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.entry-header .entry-title {
+  margin-bottom: 0;
+}
+
+.entry-header .entry-company {
+  margin-bottom: 0;
+  text-align: right;
+  flex-shrink: 0;
+}
+
 .entry-title {
   font-family: var(--font-heading);
   font-size: 20px;

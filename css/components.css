@@ -281,7 +281,7 @@
   font-weight: 600;
   letter-spacing: 0.5px;
   position: relative;
-  background: rgba(240,230,208,0.5);
+  background: rgba(240,230,208,0.3);
 }
 .interest-badge::before {
   content: '';
