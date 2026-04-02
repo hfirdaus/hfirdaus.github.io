@@ -98,7 +98,7 @@
   }
 
   // Keyboard navigation (left/right arrows)
-  var pageOrder = ['home', 'experience', 'projects', 'about', 'contact'];
+  var pageOrder = ['home', 'about', 'experience', 'projects', 'contact'];
 
   document.addEventListener('keydown', function(e) {
     // Don't intercept if user is typing in an input
