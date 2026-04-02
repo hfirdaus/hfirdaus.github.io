@@ -1,0 +1,19 @@
+title: Hadiya Firdaus
+description: Software Engineer — Portfolio & Field Notes
+url: "https://www.hadiya.ca"
+baseurl: ""
+permalink: /fieldnotes/:year/:month/:day/:title/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - scss
+  - mockup-v2
+  - mockup*.html
+  - CLAUDE.md
+  - "*.md"
+  - "!_posts/**"
+  - "!fieldnotes/**"

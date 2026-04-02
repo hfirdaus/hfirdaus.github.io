@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} — Field Notes — Hadiya Firdaus</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/animations.css">
+<link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+
+<!-- Particles canvas -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ===================== FIELD NOTES NAV ===================== -->
+<nav class="fieldnotes-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-link">Portfolio</a>
+    <a href="/fieldnotes/" class="nav-link">Field Notes</a>
+  </div>
+</nav>
+
+<!-- ===================== POST ===================== -->
+<div class="post-page parchment-bg page-corners">
+  <div class="page-inner">
+
+    <article class="post-container animate-in">
+      <header class="post-header">
+        <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
+        <h1 class="post-title illuminated-heading">
+          <span class="drop-cap-framed glow-cap">{{ page.title | slice: 0 }}</span>
+          <span style="padding-top:14px;display:inline-block;">{{ page.title | slice: 1, 100 }}</span>
+        </h1>
+        <div style="clear:both;margin-bottom:20px;"></div>
+        {% if page.tags %}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+          <span class="project-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </header>
+
+      <div class="ornament-divider pulse-divider"></div>
+
+      <div class="ornate-frame ornate-frame-wide animate-in delay-1">
+        <span class="corner corner-tl"></span>
+        <span class="corner corner-tr"></span>
+        <span class="corner corner-bl"></span>
+        <span class="corner corner-br"></span>
+
+        <div class="post-body vine-margin">
+          {{ content }}
+        </div>
+      </div>
+
+      <div class="ornament-divider pulse-divider"></div>
+
+      <!-- Prev / Next navigation -->
+      <div class="post-nav animate-in delay-2">
+        {% if page.previous.url %}
+        <a href="{{ page.previous.url }}" class="post-nav-link post-nav-prev">
+          &#10087; {{ page.previous.title }}
+        </a>
+        {% endif %}
+        {% if page.next.url %}
+        <a href="{{ page.next.url }}" class="post-nav-link post-nav-next">
+          {{ page.next.title }} &#10087;
+        </a>
+        {% endif %}
+      </div>
+
+      <div class="back-link-wrap animate-in delay-2">
+        <a href="/fieldnotes/" class="back-link">&#10022; Back to Field Notes &#10022;</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="contact-footer-vine">
+    &#10087; &#11801; &#10086; &#10022; &#10087; &#11801; &#10086; &#10022; &#10087; &#11801; &#10086; &#10022; &#10087; &#11801; &#10086;
+  </div>
+
+  <div class="ms-band" style="margin-top:30px;"></div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <span>Hadiya Firdaus &mdash; 2026</span>
+</footer>
+
+<script src="/js/particles.js"></script>
+
+</body>
+</html>

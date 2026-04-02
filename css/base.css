@@ -1,0 +1,74 @@
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ============================================================
+   CSS VARIABLES
+   ============================================================ */
+:root {
+  --parchment-light: #f0e6d0;
+  --parchment-mid: #e8dcc0;
+  --parchment-dark: #d8ccb0;
+  --gold-dark: #c9a84c;
+  --gold-mid: #dbb868;
+  --gold-light: #f0d890;
+  --gold-pale: #f5e8b8;
+  --deep-blue: #1e3a5c;
+  --blue-mid: #2a4a70;
+  --rubric-red: #8b2020;
+  --rubric-red-light: #a83030;
+  --forest-green: #2a5a3a;
+  --green-mid: #3a7a4a;
+  --ink: #1a1a1e;
+  --burgundy: #5a1a2a;
+  --nav-bg: #0a1420;
+  --page-bg: #0f1e30;
+  --page-bg-mid: #162a42;
+
+  --font-display: 'Cinzel Decorative', serif;
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Crimson Pro', Georgia, serif;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--page-bg);
+  line-height: 1.7;
+  font-size: 18px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   DARK BLUE TEXTURE BACKGROUNDS
+   ============================================================ */
+.parchment-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(30,58,92,0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(22,42,66,0.5) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(30,58,92,0.3) 0%, transparent 60%),
+    radial-gradient(circle at 30% 30%, rgba(201,168,76,0.04) 0%, transparent 30%),
+    radial-gradient(circle at 70% 70%, rgba(201,168,76,0.04) 0%, transparent 30%),
+    linear-gradient(180deg, var(--page-bg) 0%, var(--page-bg-mid) 50%, var(--page-bg) 100%);
+}
+
+.parchment-bg-warm {
+  background:
+    radial-gradient(ellipse at 60% 40%, rgba(30,58,92,0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.05) 0%, transparent 40%),
+    linear-gradient(180deg, #12233a 0%, var(--page-bg-mid) 40%, #101e32 100%);
+}
+
+.parchment-bg-cool {
+  background:
+    radial-gradient(ellipse at 40% 30%, rgba(15,30,48,0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(30,58,92,0.3) 0%, transparent 50%),
+    linear-gradient(180deg, #0e1c2e 0%, #142638 50%, var(--page-bg) 100%);
+}

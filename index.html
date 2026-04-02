@@ -1,377 +1,598 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hadiya Firdaus - Portfolio</title>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hadiya Firdaus — Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+
+<!-- Particles canvas (behind everything) -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav>
+  <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+  <div class="nav-inner">
+    <button class="nav-btn active" data-page="home">Home</button>
+    <button class="nav-btn" data-page="experience">Experience</button>
+    <button class="nav-btn" data-page="projects">Projects</button>
+    <button class="nav-btn" data-page="about">About</button>
+    <button class="nav-btn" data-page="contact">Contact</button>
+    <a href="/fieldnotes/" class="nav-btn nav-btn-link">Field Notes</a>
+  </div>
+</nav>
+
+<!-- ===================== HOME PAGE ===================== -->
+<div class="page active parchment-bg page-corners" id="page-home">
+  <!-- Margin spot illustrations -->
+  <div class="spot-ms vine shimmer-spot" style="top:120px;right:30px;"></div>
+  <div class="spot-ms floral shimmer-spot" style="top:300px;left:20px;animation-delay:1.5s;"></div>
+  <div class="spot-ms leaf shimmer-spot" style="bottom:100px;right:40px;animation-delay:2.5s;"></div>
+  <div class="spot-ms star shimmer-spot" style="top:200px;left:40px;animation-delay:0.8s;"></div>
+
+  <div class="page-inner">
+    <div class="home-hero animate-in">
+      <div class="hero-vines">
+        <div class="hero-cap glow-cap">H</div>
+      </div>
+      <h1>Hadiya Firdaus</h1>
+      <div class="subtitle">Software Engineer</div>
     </div>
-    <!-- End #mobile-menu-toggle -->
-    <header class="sticky">
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div> 
-        <ul id="menu" class="shadow">
-            <li class="lefter">
-                <a href="/" class="no-scroll"><img src="favicon.png" class="favicon"/>HADIYA FIRDAUS</a>
-            </li>
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-<!--
-            <li>
-                <a href="#gallery">Gallery</a>
-            </li>
--->
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </header>
-    <!-- End header -->
 
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Hadiya Firdaus</h1>
-                <div class="social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/hfirdaus" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/in/hfirdaus" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="mailto:contact@hadiya.ca"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-        </div>
-        <!-- End #lead-content -->
-
-        <div id="lead-overlay"></div>
-
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
+    <div class="ornate-frame ornate-frame-wide animate-in delay-1">
+      <p class="home-intro">
+        I'm a software developer, a problem-solver, and a lifelong learner. I'm interested in the future of AI and mixed reality and how we pivot it to goodness, the changing ways we interface with technology, and how we use science to empower and give back to our communities. In no particular order, I like origami, fiction, gardening, theatre, comedy, and poststructuralism.
+      </p>
     </div>
-    <!-- End #lead -->
 
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="heading">Hi, I'm Hadiya</h2>
-                </div>
-                <div class="col-md-8">
-                    I'm a software developer, a problem-solver, and a lifelong learner. I'm interested in the future of AI and mixed reality and how we pivot it to goodness, the changing ways we interface with technology, and how we use science to empower and give back to our communities. In no particular order, I like origami, fiction, gardening, theatre, comedy, and poststructuralism.
-                    <br><br>
-                    This portfolio is a timeline of my career and life. I'm currently based out of Seattle, Washington. If you want to know more about my work or just talk, <a href="https://linkedin.com/in/hfirdaus" target="_blank">check out my LinkedIn</a> or <a class="scroll" href="#contact">shoot me an email</a>. 
-                    <br><br>
-                    PS: That photo above is of the Spray Lakes Reservoir during larch season in Kananaskis, Alberta. 
-                    <br><br>                    
-                </div>
-            </div>
-        </div>
+    <div class="ornament-divider pulse-divider"></div>
+
+    <div class="nav-cards animate-in delay-2">
+      <div class="nav-card" data-nav="experience">
+        <div class="card-ornament">&#10086;</div>
+        <h3>Experience</h3>
+        <p>Career history and roles</p>
+      </div>
+      <div class="nav-card" data-nav="projects">
+        <div class="card-ornament">&#11801;</div>
+        <h3>Projects</h3>
+        <p>Selected works and builds</p>
+      </div>
+      <div class="nav-card" data-nav="about">
+        <div class="card-ornament">&#10087;</div>
+        <h3>About</h3>
+        <p>Background, skills, interests</p>
+      </div>
+      <div class="nav-card" data-nav="contact">
+        <div class="card-ornament">&#10022;</div>
+        <h3>Contact</h3>
+        <p>Get in touch</p>
+      </div>
+      <a href="/fieldnotes/" class="nav-card nav-card-link">
+        <div class="card-ornament">&#129718;</div>
+        <h3>Field Notes</h3>
+        <p>Writing and observations</p>
+      </a>
     </div>
-    <!-- End #about -->
-    
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
+  </div>
 
-           <div data-date="July 2022 - present">
-                <h3><a href="https://www.microsoft.com" target="_blank">Microsoft</a></h3>
-                <div id="skills-inline">
-                    <ul>
-                        <li>C#</li>
-                        <li>.NET</li>
-                        <li>Azure</li>
-                    </ul>
-                </div>
-                <h4>Software Engineer</h4>
-                <p>Working on scaling and maintaining a robust platform for automated revenue recognition that processes billions of dollars of complex transactions processed by Microsoft for clients, vendors, and customers.</p>
-                <br>
-            </div>
+  <div class="ms-band" style="margin-top:50px;"></div>
+</div>
 
-            
-            <div data-date="October 2019 - March 2022">
-                <h3><a href="https://www.benevity.com" target="_blank">Benevity</a></h3>
-                <div id="skills-inline">
-                    <ul>
-                        <li>Java</li>
-                        <li>Spring Boot</li>
-                        <li>Javascript</li>
-                        <li>Vue.js</li>
-                    </ul>
-                </div>
-                <h4>Software Developer</h4>
-                <p>Working on developing a new flexible guided content creation experience for charities to create engaging content for users.</p>
-                <br>
-            </div>
+<!-- ===================== EXPERIENCE PAGE ===================== -->
+<div class="page parchment-bg-warm page-corners" id="page-experience">
+  <div class="spot-ms vine shimmer-spot" style="top:150px;right:25px;"></div>
+  <div class="spot-ms star shimmer-spot" style="top:400px;right:35px;animation-delay:2s;"></div>
+  <div class="spot-ms floral shimmer-spot" style="bottom:150px;left:18px;animation-delay:1s;"></div>
 
+  <div class="page-inner">
+    <h2 class="illuminated-heading animate-in">
+      <span class="drop-cap-framed glow-cap">E</span>
+      <span style="padding-top:14px;display:inline-block;">xperience</span>
+    </h2>
+    <div style="clear:both;margin-bottom:30px;"></div>
 
-            <div data-date="May 2018 - Aug 2018">
-			<h3><a href="https://www.infoblox.com" target="_blank">Infoblox</a></h3>
-            <div id="skills-inline">
-            <ul>
-                <li>Go</li>
-            </ul>
-            </div>
-			<h4>Software Engineer Intern</h4>
-            <p>Worked on upgrading the testing suite for Infoblox's SaaS DNS microservice to prepare for migration to a new framework. Developed in Go in an agile environment, collaborated with a global team.</p>
-            <br>
-		</div>
-		
-	    <div data-date="Jan 2018 - April 2018">
-		    <h3><a href="http://ase.cpsc.ucalgary.ca/index.php" target="_blank">Agile Surface Engineering Lab</a></h3>
-            <div id="skills-inline">
-            <ul>
-            <li>C#</li>
-                <li>Unity</li>
-            </ul>
-            </div>
-		    <h4>AR/VR Developer</h4>
-            <p>I developed an augmented reality interface for physiotherapists on the HoloLens to navigate through visualizations of their patients' skeletal history (as recorded using a Kinect in each visit) and provided aids - colour, size, position of skeletons - to allow for accurate evidence-based analysis of patients' rehabilitation recovery trajectory.</p>
+    <div class="ornament-divider-sm"></div>
 
-            <br>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/oaLf5064ZmI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		</div>
-	
-            <div data-date="May 2016 - September 2017">
-		  <h3><a href="https://solium.com/" target="_blank">Solium Capital</a></h3>
-            <div id="skills-inline">
-            <ul>
-            <li>Java</li>
-                <li>GWT</li>
-            </ul>
-            </div>
-                <h4>Full Stack Software Developer</h4>
-            </div>
+    <div class="timeline">
+      <!-- SVG vine for timeline animation -->
+      <svg class="timeline-vine-svg" viewBox="0 0 30 800" preserveAspectRatio="none" fill="none">
+        <path class="vine-path" d="M15,0 Q20,50 12,100 Q5,150 18,200 Q25,250 10,300 Q5,350 20,400 Q25,450 12,500 Q5,550 18,600 Q25,650 10,700 Q8,750 15,800" stroke="#2a5a3a" stroke-width="1.5" opacity="0.25" fill="none"/>
+        <!-- Leaf shapes along vine -->
+        <path class="vine-leaf" d="M12,80 Q8,72 14,68 Q18,75 12,80Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M20,200 Q24,192 18,188 Q14,195 20,200Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M10,340 Q6,332 12,328 Q16,335 10,340Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M18,480 Q22,472 16,468 Q12,475 18,480Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M12,620 Q8,612 14,608 Q18,615 12,620Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M20,740 Q24,732 18,728 Q14,735 20,740Z" fill="#2a5a3a" opacity="0.15"/>
+      </svg>
 
-            <div data-date="July 2015 – April 2016">
-                <h3><a href="https://ucalgary.ca/bia" target="_blank">Business Intelligence & Analytics, UofC</a></h3>
-                <div id="skills-inline">
-                    <ul>
-                        <li>Drupal</li>
-                        <li>PHP</li>
-                    </ul>
-                </div>
-                <h4>Business Intelligence Student Assistant</h4>
-            </div>
+      <!-- Entry 1 -->
+      <div class="timeline-entry animate-in delay-1">
+        <div class="entry-date">Jul 2022 &mdash; Present</div>
+        <div class="entry-title">
+          <span class="small-illuminated">S</span>
+          <span style="padding-top:6px;">Software Engineer</span>
         </div>
+        <div class="entry-company"><a href="https://www.microsoft.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Microsoft</a></div>
+        <div class="entry-desc">
+          <ul>
+            <li>Working on scaling and maintaining a robust platform for automated revenue recognition that processes billions of dollars of complex transactions processed by Microsoft for clients, vendors, and customers</li>
+          </ul>
+          <div class="project-tags" style="margin-top:8px;">
+            <span class="project-tag">C#</span>
+            <span class="project-tag">.NET</span>
+            <span class="project-tag">Azure</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <!-- Entry 2 -->
+      <div class="timeline-entry animate-in delay-1">
+        <div class="entry-date">Oct 2019 &mdash; Mar 2022</div>
+        <div class="entry-title">
+          <span class="small-illuminated">S</span>
+          <span style="padding-top:6px;">Software Developer</span>
+        </div>
+        <div class="entry-company"><a href="https://www.benevity.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Benevity</a></div>
+        <div class="entry-desc">
+          <ul>
+            <li>Working on developing a new flexible guided content creation experience for charities to create engaging content for users</li>
+          </ul>
+          <div class="project-tags" style="margin-top:8px;">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Vue.js</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <!-- Entry 3 -->
+      <div class="timeline-entry animate-in delay-1">
+        <div class="entry-date">May 2018 &mdash; Aug 2018</div>
+        <div class="entry-title">
+          <span class="small-illuminated">S</span>
+          <span style="padding-top:6px;">Software Engineer Intern</span>
+        </div>
+        <div class="entry-company"><a href="https://www.infoblox.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Infoblox</a></div>
+        <div class="entry-desc">
+          <ul>
+            <li>Worked on upgrading the testing suite for Infoblox's SaaS DNS microservice to prepare for migration to a new framework</li>
+            <li>Developed in Go in an agile environment, collaborated with a global team</li>
+          </ul>
+          <div class="project-tags" style="margin-top:8px;">
+            <span class="project-tag">Go</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <!-- Entry 4 -->
+      <div class="timeline-entry animate-in delay-1">
+        <div class="entry-date">Jan 2018 &mdash; Apr 2018</div>
+        <div class="entry-title">
+          <span class="small-illuminated">A</span>
+          <span style="padding-top:6px;">AR/VR Developer</span>
+        </div>
+        <div class="entry-company"><a href="http://ase.cpsc.ucalgary.ca/index.php" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Agile Surface Engineering Lab</a></div>
+        <div class="entry-desc">
+          <ul>
+            <li>Developed an augmented reality interface for physiotherapists on the HoloLens to navigate through visualizations of their patients' skeletal history and provided aids &mdash; colour, size, position of skeletons &mdash; to allow for accurate evidence-based analysis of patients' rehabilitation recovery trajectory</li>
+          </ul>
+          <div class="project-tags" style="margin-top:8px;">
+            <span class="project-tag">C#</span>
+            <span class="project-tag">Unity</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <!-- Entry 5 -->
+      <div class="timeline-entry animate-in delay-1">
+        <div class="entry-date">May 2016 &mdash; Sep 2017</div>
+        <div class="entry-title">
+          <span class="small-illuminated">F</span>
+          <span style="padding-top:6px;">Full Stack Software Developer</span>
+        </div>
+        <div class="entry-company"><a href="https://solium.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Solium Capital</a></div>
+        <div class="entry-desc">
+          <div class="project-tags" style="margin-top:8px;">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">GWT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <!-- Entry 6 -->
+      <div class="timeline-entry animate-in delay-1">
+        <div class="entry-date">Jul 2015 &mdash; Apr 2016</div>
+        <div class="entry-title">
+          <span class="small-illuminated">B</span>
+          <span style="padding-top:6px;">Business Intelligence Student Assistant</span>
+        </div>
+        <div class="entry-company"><a href="https://ucalgary.ca/bia" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">Business Intelligence &amp; Analytics, UofC</a></div>
+        <div class="entry-desc">
+          <div class="project-tags" style="margin-top:8px;">
+            <span class="project-tag">Drupal</span>
+            <span class="project-tag">PHP</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- End #experience -->    
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="education-block">
-            <h3>University of Calgary</h3>
-            <span class="education-date">Sept 2013 - Apr 2019</span>
-            <h4>Bachelor of Science in Computer Science (with Internship)</h4>
-                <p>Notable courses:</p>
-            <ul>
-             <li>Viruses and Malware (a.k.a. Defense Against the Dark Arts)</li>
-                <li>Cryptography</li>
-		        <li>Human-Robot Interaction</li>
-                <li>Mixed Reality</li>
-                </ul>
-        </div>
-        <!-- End .education-block -->
-        <div class="education-block">
-            <h3>University of Calgary</h3>
-            <span class="education-date">Sept 2013 - Apr 2019</span>
-            <h4>Bachelor of Arts in English</h4>
-            <p>
-                Notable courses:
+  </div>
+
+  <div class="ms-band" style="margin-top:40px;"></div>
+</div>
+
+<!-- ===================== PROJECTS PAGE ===================== -->
+<div class="page parchment-bg-cool page-corners" id="page-projects">
+  <div class="spot-ms leaf shimmer-spot" style="top:130px;right:28px;"></div>
+  <div class="spot-ms vine shimmer-spot" style="top:350px;left:16px;animation-delay:1.8s;"></div>
+  <div class="spot-ms star shimmer-spot" style="bottom:120px;right:20px;animation-delay:0.5s;"></div>
+
+  <div class="page-inner">
+    <h2 class="illuminated-heading animate-in">
+      <span class="drop-cap-framed glow-cap">P</span>
+      <span style="padding-top:14px;display:inline-block;">rojects</span>
+    </h2>
+    <div style="clear:both;margin-bottom:30px;"></div>
+
+    <div class="ornament-divider-sm"></div>
+
+    <div class="projects-grid">
+      <!-- Project 1: Physifeedback -->
+      <div class="project-card animate-in delay-1">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <span class="project-card-emoji">&#129529;</span>
+            <h3>Physifeedback</h3>
+            <p class="project-desc">A proof of concept tool for physiotherapy patients that uses their camera to recognize exercises and provides feedback on range of motion, rep time, and rep count. Powered by the MediaPipe Pose Tracking API.</p>
+            <div class="project-tags">
+              <span class="project-tag">MediaPipe</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">ML</span>
+            </div>
+            <div class="flip-hint-front">click to reveal more &#10022;</div>
+          </div>
+          <div class="project-card-back">
+            <h4>&#10022; Physifeedback</h4>
+            <p>Supports patients doing exercises at home so they focus on form instead of keeping track. Image recognition AI trained on 100s of physiotherapy pose images.</p>
+            <p style="margin-top:12px;">
+              <a href="https://github.com/hfirdaus/physifeedback" target="_blank" rel="noopener" style="color:var(--gold-mid);font-size:13px;">GitHub</a>
             </p>
-            <ul>
-                <li>Young Adult Literature</li>
-                <li>British Romanticism</li>
-		        <li>The Canterbury Tales</li>
-		    <li>Women and Gothic Fiction</li>
-            </ul>
+            <div class="flip-hint">click to flip back</div>
+          </div>
         </div>
-        <!-- End .education-block -->
-        <div class="education-block">
-            <h3>Yonsei University (연세 대학교)</h3>
-            <span class="education-date">Sept 2018 - Dec 2018</span>
-            <h4>Study Abroad in Seoul, South Korea</h4>
-        </div>
-        <!-- End .education-block -->
-        <div class="education-block">
-            <h3>Université de Montréal </h3>
-            <span class="education-date">July 2019</span>
-            <h4>EXPLORE French Immersion Exchange, Montréal</h4>
-        </div>
-        <!-- End .education-block -->
-        <div class="education-block">
-		<h3><a href="amii.ca" target="_blank">AMII</a> & <a href="mila.quebec/en" target="_blank">MILA</h3>
-            <span class="education-date">May 2021 - June 2021</span>
-		<h4><a href="https://www.ai4goodlab.com/" target="_blank">AI4GoodLab</a></h4>
-		<p>A competitive training program for women in artificial intelligence and machine learning.</p>
-	<a href="https://www.credential.net/cc88dbe1-980f-48ad-ac43-924cdb028188" target="_blank">Check out the Credential</a>
-        </div>
-        <!-- End .education-block -->
-        
-    </div>
-    <!-- End #education -->
-        <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
-        <div class="container">
-            <div class="row">
+      </div>
 
-		<div class="project shadow-large">
-                    <div class="project-image">
-                        <img width="300px" src="images/project-6.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Physifeedback</h3>
-                        <p>A proof of concept tool for physiotherapy patients that uses their camera to recognize the exercises they are doing and provides feedback on their range of motion, rep time, and rep count. This is meant to support patients while they do their exercises at home so they focus on their form instead of keeping track, see their progress, and are guided on the correct form. This tool is powered by the MediaPipe Pose Tracking API, and it's image recognition AI is trained on 100s of images of physiotherapy poses in order to recognize different body types.
-                            </p>
-                        <a href="https://drive.google.com/file/d/1fQiHXi5n-9_sdnrebQE0u39poKV-XAjS/view?usp=sharing" target="_blank">See Physifeedback in Action</a> |
-                        <a href="https://physifeedback.herokuapp.com" target="_blank">Try it Yourself</a> |
-                        <a href="https://github.com/hfirdaus/physifeedback" target="_blank">Here's the Source Code</a>
-
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-
-		    
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img width="300px" height="300px" src="images/project-spark.png" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Solar Search</h3>
-                        <p>
-                            An exciting augmented reality space scavenger hunt designed to encourage collaborative exploration and learning by visitors child and adult alike in the Telus Spark Science Centre.
-                        </p>
-
-                        <a href="https://drive.google.com/open?id=1w0OFbLtqJbR8HyctIGzP_cvyUqd66Y1M" target="_blank">See Solar Search in Action</a> |
-                        <a href="https://github.com/hfirdaus/projectspark" target="_blank">Here's the Source Code</a>
-
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img width="300px" height="300px" src="images/project-bettybot.PNG" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Bettybot: An Assistive Elderly Companion</h3>
-                        <p>
-                            As the elderly population grows, the need for health care providers increases.
-                            For the elderly, falling is one of the primary sources of mortality and immobility.
-                            Falling also causes healthy independent elderly people to require assistance.
-                            BettyBot is an assistive robot meant to help elderly people living alone remain independent.
-                            BettyBot interacts using voice, detects falls and contacts emergency contacts, plays games to help with memory recall, and brings pills on their prescribed times in order to keep its elderly companion healthy and safe.
-                            Powered by a Pioneer 3DX, Google Home, an accelerometer, and some code.
-                        </p>
-                        <a href="https://youtu.be/kKcYmujrF5Q" target="_blank">See BettyBot in Action</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-		    
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img width="300px" src="images/project-0.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Pollocks</h3>
-                        <p>
-                            An attempt to represent Jackson Pollock's essence, personality, and experimentalism in a singular interaction.
-                            </p>
-                        <a href="https://youtu.be/TeNsiDFyrBE" target="_blank">See Pollocks in Action</a> |
-                               <!-- 
- <a href="/pollocks" target="_blank">Try it Yourself</a> |  -->
-
-                        <a href="https://github.com/hfirdaus/pollocks" target="_blank">Here's the Source Code</a>
-
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
+      <!-- Project 2: Solar Search -->
+      <div class="project-card animate-in delay-1">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <span class="project-card-emoji">&#9728;&#65039;</span>
+            <h3>Solar Search</h3>
+            <p class="project-desc">An augmented reality space scavenger hunt designed to encourage collaborative exploration and learning by visitors child and adult alike in the Telus Spark Science Centre.</p>
+            <div class="project-tags">
+              <span class="project-tag">AR</span>
+              <span class="project-tag">Unity</span>
+              <span class="project-tag">C#</span>
             </div>
+            <div class="flip-hint-front">click to reveal more &#10022;</div>
+          </div>
+          <div class="project-card-back">
+            <h4>&#10022; Solar Search</h4>
+            <p>An exciting AR scavenger hunt at Telus Spark Science Centre that encourages collaborative exploration and learning about the solar system.</p>
+            <p style="margin-top:12px;">
+              <a href="https://github.com/hfirdaus/projectspark" target="_blank" rel="noopener" style="color:var(--gold-mid);font-size:13px;">GitHub</a>
+            </p>
+            <div class="flip-hint">click to flip back</div>
+          </div>
         </div>
-    </div>
-    <!-- End #projects -->
-<!--
+      </div>
 
-    <div id="gallery">
-    <div class="optional-section background">
-        <h2 class="heading">Gallery</h2>
-        <div class="optional-section-block">
-            <iframe src="http://instagram.com/p/incaseofhadiya/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-    </div>
-        </div>
-    </div>
--->
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Copyright &copy; 2018-2023 HADIYA FIRDAUS
-                    </p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social-bottom">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/hfirdaus" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/in/hfirdaus" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="mailto:contact@hadiya.ca"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
+      <!-- Project 3: BettyBot -->
+      <div class="project-card animate-in delay-2">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <span class="project-card-emoji">&#129302;</span>
+            <h3>BettyBot</h3>
+            <p class="project-desc">An assistive elderly companion robot meant to help elderly people living alone remain independent. Detects falls, contacts emergency contacts, plays memory games, and delivers pills on schedule.</p>
+            <div class="project-tags">
+              <span class="project-tag">Robotics</span>
+              <span class="project-tag">Google Home</span>
+              <span class="project-tag">Pioneer 3DX</span>
             </div>
+            <div class="flip-hint-front">click to reveal more &#10022;</div>
+          </div>
+          <div class="project-card-back">
+            <h4>&#10022; BettyBot</h4>
+            <p>Powered by a Pioneer 3DX, Google Home, an accelerometer, and some code. Interacts using voice and keeps its elderly companion healthy and safe.</p>
+            <p style="margin-top:12px;">
+              <a href="https://youtu.be/kKcYmujrF5Q" target="_blank" rel="noopener" style="color:var(--gold-mid);font-size:13px;">Video Demo</a>
+            </p>
+            <div class="flip-hint">click to flip back</div>
+          </div>
         </div>
-    </footer>
-    <!-- End footer -->
+      </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
+      <!-- Project 4: Pollocks -->
+      <div class="project-card animate-in delay-2">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <span class="project-card-emoji">&#127912;</span>
+            <h3>Pollocks</h3>
+            <p class="project-desc">An attempt to represent Jackson Pollock's essence, personality, and experimentalism in a singular interaction.</p>
+            <div class="project-tags">
+              <span class="project-tag">Processing</span>
+              <span class="project-tag">Art</span>
+              <span class="project-tag">HCI</span>
+            </div>
+            <div class="flip-hint-front">click to reveal more &#10022;</div>
+          </div>
+          <div class="project-card-back">
+            <h4>&#10022; Pollocks</h4>
+            <p>An interactive art piece capturing the spirit of Jackson Pollock's action painting through digital interaction.</p>
+            <p style="margin-top:12px;">
+              <a href="https://github.com/hfirdaus/pollocks" target="_blank" rel="noopener" style="color:var(--gold-mid);font-size:13px;">GitHub</a>
+              &nbsp;
+              <a href="https://youtu.be/TeNsiDFyrBE" target="_blank" rel="noopener" style="color:var(--gold-mid);font-size:13px;">Video</a>
+            </p>
+            <div class="flip-hint">click to flip back</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ms-band" style="margin-top:50px;"></div>
+</div>
+
+<!-- ===================== ABOUT PAGE ===================== -->
+<div class="page parchment-bg page-corners" id="page-about">
+  <div class="spot-ms floral shimmer-spot" style="top:140px;right:22px;"></div>
+  <div class="spot-ms vine shimmer-spot" style="top:380px;left:14px;animation-delay:1.2s;"></div>
+  <div class="spot-ms leaf shimmer-spot" style="bottom:180px;right:30px;animation-delay:2s;"></div>
+  <div class="spot-ms star shimmer-spot" style="bottom:80px;left:30px;animation-delay:0.7s;"></div>
+
+  <div class="page-inner">
+    <h2 class="illuminated-heading animate-in">
+      <span class="drop-cap-framed glow-cap">A</span>
+      <span style="padding-top:14px;display:inline-block;">bout</span>
+    </h2>
+    <div style="clear:both;margin-bottom:30px;"></div>
+
+    <div class="ornate-frame ornate-frame-wide animate-in delay-1" style="position:relative;">
+      <span class="corner corner-tl"></span>
+      <span class="corner corner-tr"></span>
+      <span class="corner corner-bl"></span>
+      <span class="corner corner-br"></span>
+
+      <div>
+        <p class="about-bio">
+          I'm a software developer, a problem-solver, and a lifelong learner. I'm interested in the future of AI and mixed reality and how we pivot it to goodness, the changing ways we interface with technology, and how we use science to empower and give back to our communities.
+        </p>
+        <p class="about-bio">
+          In no particular order, I like origami, fiction, gardening, theatre, comedy, and poststructuralism. I'm currently based out of Seattle, Washington.
+        </p>
+      </div>
+    </div>
+
+    <div class="ornament-divider pulse-divider"></div>
+
+    <!-- Skills -->
+    <div class="ornate-frame animate-in delay-2">
+      <span class="corner corner-tl"></span>
+      <span class="corner corner-tr"></span>
+      <span class="corner corner-bl"></span>
+      <span class="corner corner-br"></span>
+
+      <div class="skills-section">
+        <h3>Skills</h3>
+        <div class="skills-columns">
+          <div class="skills-col">
+            <div class="skill-item">C# / .NET</div>
+            <div class="skill-item">Java / Spring Boot</div>
+            <div class="skill-item">Go</div>
+            <div class="skill-item">JavaScript / Vue.js</div>
+            <div class="skill-item">C# / Unity</div>
+            <div class="skill-item">Python</div>
+          </div>
+          <div class="skills-divider"></div>
+          <div class="skills-col">
+            <div class="skill-item">Azure</div>
+            <div class="skill-item">AR / VR (HoloLens)</div>
+            <div class="skill-item">SQL</div>
+            <div class="skill-item">PHP / Drupal</div>
+            <div class="skill-item">GWT</div>
+            <div class="skill-item">Machine Learning</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ornament-divider pulse-divider"></div>
+
+    <!-- Interests -->
+    <div class="ornate-frame animate-in delay-3">
+      <span class="corner corner-tl"></span>
+      <span class="corner corner-tr"></span>
+      <span class="corner corner-bl"></span>
+      <span class="corner corner-br"></span>
+
+      <div class="interests-section">
+        <h3>Interests</h3>
+        <div class="interests-wrap">
+          <span class="interest-badge float-badge" style="animation-delay:0s;">Origami</span>
+          <span class="interest-badge float-badge" style="animation-delay:0.3s;">Fiction</span>
+          <span class="interest-badge float-badge" style="animation-delay:0.6s;">Gardening</span>
+          <span class="interest-badge float-badge" style="animation-delay:0.9s;">Theatre</span>
+          <span class="interest-badge float-badge" style="animation-delay:1.2s;">Comedy</span>
+          <span class="interest-badge float-badge" style="animation-delay:1.5s;">Poststructuralism</span>
+          <span class="interest-badge float-badge" style="animation-delay:1.8s;">AI &amp; Mixed Reality</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ornament-divider pulse-divider"></div>
+
+    <!-- Education -->
+    <h3 class="illuminated-heading animate-in delay-3" style="font-size:22px;margin-bottom:16px;">
+      <span class="small-illuminated" style="width:50px;height:50px;font-size:38px;">E</span>
+      <span style="padding-top:8px;display:inline-block;">ducation</span>
+    </h3>
+    <div style="clear:both;margin-bottom:20px;"></div>
+
+    <div class="timeline animate-in delay-3">
+      <!-- SVG vine for timeline animation -->
+      <svg class="timeline-vine-svg" viewBox="0 0 30 800" preserveAspectRatio="none" fill="none">
+        <path class="vine-path" d="M15,0 Q20,50 12,100 Q5,150 18,200 Q25,250 10,300 Q5,350 20,400 Q25,450 12,500 Q5,550 18,600 Q25,650 10,700 Q8,750 15,800" stroke="#2a5a3a" stroke-width="1.5" opacity="0.25" fill="none"/>
+        <path class="vine-leaf" d="M12,80 Q8,72 14,68 Q18,75 12,80Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M20,200 Q24,192 18,188 Q14,195 20,200Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M10,340 Q6,332 12,328 Q16,335 10,340Z" fill="#2a5a3a" opacity="0.15"/>
+        <path class="vine-leaf" d="M18,480 Q22,472 16,468 Q12,475 18,480Z" fill="#2a5a3a" opacity="0.15"/>
+      </svg>
+
+      <div class="timeline-entry">
+        <div class="entry-date">Sep 2013 &mdash; Apr 2019</div>
+        <div class="entry-title">
+          <span class="small-illuminated">U</span>
+          <span style="padding-top:6px;">University of Calgary</span>
+        </div>
+        <div class="entry-desc">
+          <ul>
+            <li>B.Sc. Computer Science (with Internship)</li>
+            <li>B.A. English</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry">
+        <div class="entry-date">Sep 2018 &mdash; Dec 2018</div>
+        <div class="entry-title">
+          <span class="small-illuminated">Y</span>
+          <span style="padding-top:6px;">Yonsei University</span>
+        </div>
+        <div class="entry-desc">
+          <ul>
+            <li>Study Abroad &mdash; Seoul, South Korea</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry">
+        <div class="entry-date">Jul 2019</div>
+        <div class="entry-title">
+          <span class="small-illuminated">U</span>
+          <span style="padding-top:6px;">Universit&eacute; de Montr&eacute;al</span>
+        </div>
+        <div class="entry-desc">
+          <ul>
+            <li>EXPLORE French Immersion Exchange</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ornament-divider-sm"></div>
+
+      <div class="timeline-entry">
+        <div class="entry-date">May 2021 &mdash; Jun 2021</div>
+        <div class="entry-title">
+          <span class="small-illuminated">A</span>
+          <span style="padding-top:6px;">AMII &amp; MILA</span>
+        </div>
+        <div class="entry-desc">
+          <ul>
+            <li>AI4GoodLab &mdash; Training program for women in AI and machine learning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ms-band" style="margin-top:50px;"></div>
+</div>
+
+<!-- ===================== CONTACT PAGE ===================== -->
+<div class="page parchment-bg-warm page-corners" id="page-contact">
+  <div class="spot-ms vine shimmer-spot" style="top:160px;right:30px;"></div>
+  <div class="spot-ms star shimmer-spot" style="bottom:150px;left:25px;animation-delay:1.5s;"></div>
+
+  <div class="page-inner" style="padding-top:20px;">
+    <h2 class="illuminated-heading animate-in">
+      <span class="drop-cap-framed glow-cap">C</span>
+      <span style="padding-top:14px;display:inline-block;">ontact</span>
+    </h2>
+    <div style="clear:both;margin-bottom:30px;"></div>
+
+    <div class="ornate-frame animate-in delay-1" style="max-width:700px;margin:0 auto;">
+      <span class="corner corner-tl"></span>
+      <span class="corner corner-tr"></span>
+      <span class="corner corner-bl"></span>
+      <span class="corner corner-br"></span>
+
+      <p style="text-align:center;font-size:17px;color:#3a3a3e;margin-bottom:30px;line-height:1.8;">
+        I am always glad to connect with fellow engineers, writers, and curious people. Feel free to reach out through any of the channels below.
+      </p>
+
+      <div class="contact-links">
+        <a href="https://github.com/hfirdaus" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-initial">G</div>
+          <h3>GitHub</h3>
+          <p>github.com/hfirdaus</p>
+        </a>
+
+        <a href="https://linkedin.com/in/hfirdaus" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-initial">L</div>
+          <h3>LinkedIn</h3>
+          <p>linkedin.com/in/hfirdaus</p>
+        </a>
+
+        <a href="mailto:contact@hadiya.ca" class="contact-card">
+          <div class="contact-initial">E</div>
+          <h3>Email</h3>
+          <p>contact@hadiya.ca</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-footer-vine">
+      &#10087; &#11801; &#10086; &#10022; &#10087; &#11801; &#10086; &#10022; &#10087; &#11801; &#10086; &#10022; &#10087; &#11801; &#10086;
+    </div>
+  </div>
+
+  <div class="ms-band" style="margin-top:50px;"></div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <span>Hadiya Firdaus &mdash; 2026</span>
+</footer>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script src="js/navigation.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/interactions.js"></script>
+<script src="js/vine-animation.js"></script>
+
 </body>
-
 </html>
